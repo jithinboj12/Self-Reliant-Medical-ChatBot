@@ -27,21 +27,6 @@ Quickstart (Linux/macOS/Windows)
    - python -m src.chatbot.server --model models/intent_model_v1.joblib --intents data/intents.json
    - Open http://127.0.0.1:5000/ui (simple chat UI) or POST JSON to /chat
 
-Project layout
-- data/intents.json         — Example intents dataset (patterns + responses + metadata)
-- models/                   — Saved model(s) (created by training)
-- scripts/train.py          — Training script to build & save model
-- src/chatbot/              — Package
-  - preprocessor.py         — Text normalization, tokenization, lemmatization
-  - data_loader.py          — Utilities to load and expand intent dataset
-  - model.py                — Training, prediction, persistence
-  - response_selector.py    — Maps predicted intent to responses
-  - cli.py                  — Local interactive CLI
-  - server.py               — Flask HTTP server + simple UI
-- requirements.txt
-- README.md
-- LICENSE
-
 Safety & medical disclaimer
 This project is a research/prototype tool. Do not deploy as a sole source of medical advice. Always include a disclaimer and provide escalation to clinical professionals or emergency services for critical cases.
 
@@ -49,9 +34,3 @@ Extending the system
 - Add intents/patterns in data/intents.json
 - Re-train to include new data
 - Swap model components: try larger models, embedding-based classifiers, or integrate entity extraction
-
-If you want, I can:
-- Expand dataset with more medical intents
-- Add entity extraction (symptom / duration / severity)
-- Integrate a small knowledge base for FAQ retrieval
-- Add unit tests and CI workflow
