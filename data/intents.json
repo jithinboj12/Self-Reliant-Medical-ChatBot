@@ -1,0 +1,149 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good evening",
+        "is anyone there?"
+      ],
+      "responses": [
+        "Hello! I'm MedAssist — I can help with symptoms, appointments, medication guidance, or urgent triage. How can I help you today?",
+        "Hi there! Tell me briefly what you'd like help with (symptoms, medication, appointment, emergency)."
+      ],
+      "priority": 1
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "see you",
+        "goodbye",
+        "talk to you later"
+      ],
+      "responses": [
+        "Goodbye — take care. If symptoms worsen, seek medical attention.",
+        "See you later. If you have an emergency, call your local emergency number."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "appreciate it",
+        "thanks a lot"
+      ],
+      "responses": [
+        "You're welcome — happy to help.",
+        "No problem. Reach out if you need anything else."
+      ]
+    },
+    {
+      "tag": "symptom_check",
+      "patterns": [
+        "I have a headache and fever",
+        "fever and sore throat",
+        "I feel dizzy and nauseous",
+        "shortness of breath",
+        "my chest hurts",
+        "I have a rash and itching"
+      ],
+      "responses": [
+        "I'm not a doctor, but I can help triage. How long have you had these symptoms and how severe would you rate them on a scale of 1-10?",
+        "Can you tell me when the symptoms started and whether you have other issues like fever, breathing problems, or swelling?"
+      ],
+      "escalation": {
+        "keywords": ["shortness of breath", "chest pain", "losing consciousness", "severe bleeding"],
+        "action": "If you are experiencing chest pain or severe breathing difficulty, seek emergency care immediately."
+      }
+    },
+    {
+      "tag": "medication_advice",
+      "patterns": [
+        "can I take ibuprofen with aspirin",
+        "dosage for paracetamol",
+        "how much amoxicillin should I take",
+        "side effects of metformin",
+        "drug interactions with warfarin"
+      ],
+      "responses": [
+        "I can provide general information. For medication-specific dosing and interactions, please confirm your age, weight (if relevant), and medical conditions — or consult your prescribing clinician.",
+        "Medication interactions and dosing depend on many factors; please consult your pharmacist or doctor for personalized advice."
+      ],
+      "safety_note": "This is general information only — verify with a clinician or pharmacist."
+    },
+    {
+      "tag": "appointment_booking",
+      "patterns": [
+        "book an appointment",
+        "schedule a doctor's appointment",
+        "I need to see a doctor",
+        "how to make an appointment"
+      ],
+      "responses": [
+        "I can help you prepare — do you need primary care or specialty? Give me the reason and preferred dates.",
+        "For appointments I can collect basic info (purpose, preferred days), but you'll need to contact the clinic or use their booking system to finalize."
+      ]
+    },
+    {
+      "tag": "first_aid",
+      "patterns": [
+        "how to stop bleeding",
+        "treatment for burn",
+        "first aid for sprained ankle",
+        "what to do for choking",
+        "how to treat a cut"
+      ],
+      "responses": [
+        "For first aid: apply direct pressure for bleeding, run cool water for minor burns, and immobilize sprains. If in doubt or if severe, seek emergency care.",
+        "If choking and the person cannot breathe, cough, or speak, call emergency services and perform the Heimlich maneuver if trained."
+      ],
+      "priority": 2
+    },
+    {
+      "tag": "mental_health",
+      "patterns": [
+        "I feel depressed",
+        "I'm feeling anxious and scared",
+        "how to cope with stress",
+        "I want to talk about my feelings"
+      ],
+      "responses": [
+        "I'm sorry you're feeling this way. If you are in immediate danger or thinking of harming yourself, please contact emergency services or a crisis line immediately.",
+        "You might consider breathing exercises, grounding techniques, and reaching out to a trusted person or mental health professional. Would you like resources or coping strategies?"
+      ],
+      "escalation": {
+        "keywords": ["suicide", "harm myself", "want to die"],
+        "action": "If you're thinking about harming yourself, call your local emergency number or a crisis line immediately."
+      }
+    },
+    {
+      "tag": "covid_info",
+      "patterns": [
+        "covid symptoms",
+        "what to do if i test positive for coronavirus",
+        "covid vaccine side effects",
+        "how long is isolation for covid"
+      ],
+      "responses": [
+        "COVID guidance varies by location. Generally, isolate if positive, follow local health authority guidance for duration, and seek care if you have difficulty breathing.",
+        "For up-to-date guidance on isolation and testing, check local health authority sites or ask me your country so I can provide general timelines."
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [
+        "general question",
+        "I don't know how to explain"
+      ],
+      "responses": [
+        "Sorry, I didn't understand that. Can you rephrase or provide more details?",
+        "I'm not sure I follow. Try giving a short sentence like 'I have chest pain for 10 minutes' or 'what's the dosage of ibuprofen?'"
+      ]
+    }
+  ]
+}
